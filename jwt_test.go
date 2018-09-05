@@ -46,8 +46,7 @@ func TestToken(t *testing.T) {
 		if err != nil {
 			t.Errorf(" Error signing string:  ssss%v", err)
 		}
-		res, err := token.SignToken(v.key)
-		t.Errorf(res)
+		_, err = token.SignToken(v.key)
 		if err != nil {
 			t.Errorf(" Error signing token: %v", err)
 		}

@@ -1,9 +1,9 @@
 package jwt
 
 import (
-	"crypto/hmac"
-	"crypto/sha256"
-	"crypto/sha512"
+	_ "crypto/hmac"
+	 _"crypto/sha256"
+	_ "crypto/sha512"
 	"encoding/base64"
 	"encoding/json"
 	"errors"
@@ -38,11 +38,6 @@ func DecodeBase(str string) ([]byte, error) {
 		str += strings.Repeat("=", 4-l)
 	}
 	return base64.URLEncoding.DecodeString(str)
-}
-
-func init() {
-	hmac.New(sha256.New, []byte(""))
-	hmac.New(sha512.New, []byte(""))
 }
 
 //Token ..
